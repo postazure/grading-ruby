@@ -1,4 +1,5 @@
 # [6,3,5,4,3,4,4,5]
+# [:down,:up,:down,:down,:up,:even,:up]
 class DetermineDiff
   def self.diff(num_arr)
     diff_arr = []
@@ -16,7 +17,8 @@ class DetermineDiff
   end
 
   def self.decline?(num_arr)
-    difference_arr = num_arr.diff
-  
+    down_count = self.diff(num_arr).count(:down)
+
+    down_count >= 3
   end
 end
